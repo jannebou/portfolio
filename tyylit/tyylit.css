@@ -1,0 +1,206 @@
+/* yleinen muotoilu */
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background-image: url('../media/kuvat/body.png');
+  background-size:1920px 1920px;
+  background-position:top;
+}
+
+.header {
+  padding: 3%;
+  text-align: center;
+  background-image: url('../media/kuvat/banner.png') ;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: 20%;
+  color: white;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+}
+
+.header h1{
+  font-size: 48px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
+}
+
+.navbar {
+  display: flex;
+  background-color: rgb(55, 55, 55);
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.navbar a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {  
+    flex-direction: column;
+}
+}
+
+/* index sivun muotoilu */
+.indexteksti {
+  background-color: rgb(240, 240, 240);
+  margin-left:  10%;
+  margin-right: 10%;
+  padding-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 28px;
+  text-align: center;
+}
+
+.indexteksti h1{
+  padding-top: 5%;
+  font-size: 40px;
+}
+
+.indexteksti p {
+  padding-top: 15%;
+  font-size: large;
+  margin-left: 35%;
+  margin-right: 35%;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+
+}
+
+/* Staattisen sivun muotoilu */
+.sivu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.ensimmäinen, 
+.toinen,
+.kolmas {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  display: flex;
+  text-align: justify;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  background-color: rgb(240, 240, 240);
+}
+
+.kuva {
+  padding: 1%;
+  width: 50%;
+}
+
+.teksti {
+  text-align: justify;
+}
+
+.teksti h1 {
+  text-align: center;
+  padding: 1%;  
+  font-size: 50px;
+}
+
+.teksti p {
+  text-align: justify;
+  padding: 1%;
+  font-size: 20px;
+}
+
+.teksti .note {
+  font-size: small;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1000px) {
+  .ensimmäinen,
+  .toinen,
+  .kolmas,
+  .kuva
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+/* Dynaamisen sivun muotoilu */
+.peli {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 8%;
+  padding-bottom: 8%;
+  scroll-snap-type: y mandatory;
+  scroll-snap-align: start;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: rgb(240, 240, 240);
+}
+
+.peli p{
+  font-size: large;
+}
+
+.peliteksti{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.peliteksti p {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+button {
+  background-color: rgb(55, 55, 55);
+  color: white;
+  font-size: 30px;
+  margin: 2%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 100px;
+}
+
+button:hover{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-width: 10px;
+  outline: 1px solid black;
+  font-size: 40;
+}
+
+input {
+  font-size: 35px;
+  margin: 2%;
+  padding: 10px 20px;
+  text-align: center;
+}

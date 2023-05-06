@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynaaminen sivu</title>
+        <link rel="stylesheet" href="../tyylit/tyylit.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Dynaaminen Sivu</h1>
+        </div>
+
+        <div class="navbar">
+            <a href="../index.html">Etusivu</a>
+            <a href="../sivut/staattinen.html">Staattinen sivu</a>
+            <a href="../sivut/dynaaminen.html">Dynaaminen sivu</a>
+            <a href="https://www.seamk.fi">SeAMK kotisivut</a>
+        </div>
+
+        <div class="peli">
+
+          <div class="peliteksti">
+            <h1>Numeroarvauspeli</h1>
+            <p>Arvaa numero välillä 1-100:</p>
+          </div>
+          
+          <div class="syöttökenttä">
+            <input type="number" id="guess" min="1" max="100">
+          </div>
+
+          <div class="nappi"> 
+            <button id="start" onclick="tarkista()">Arvaa</button>
+          </div>
+            
+          <div class="restart"> 
+            <button id="restart" onclick="aloitaAlusta()">Aloita alusta</button>
+          </div>
+
+          <p id="result"></p>
+        </div>
+
+    
+  <script>
+    let number = Math.floor(Math.random() * 100) + 1;
+    let guesses = 0;
+
+    function aloitaAlusta() {
+        number = Math.floor(Math.random() * 100) + 1;
+        guesses = 0;
+        document.getElementById('result').textContent = '';
+        return
+    }
+    function tarkista() {
+      const guess = parseInt(document.getElementById('guess').value);
+  
+      if (isNaN(guess) || guess < 1 || guess > 100) {
+        document.getElementById('result').textContent = 'Syötä kelvollinen numero väliltä 1-100.';
+        return;
+      }
+  
+      guesses++;
+  
+      if (guess === number) {
+        document.getElementById('result').textContent = 'Arvaus ' + guesses + ': Onneksi olkoon! Arvasit oikean numeron.';
+      } else if (guess > number) {
+        document.getElementById('result').textContent = 'Arvaus ' + guesses + ': Liian suuri! Yritä uudelleen.';
+      } else {
+        document.getElementById('result').textContent = 'Arvaus ' + guesses + ': Liian pieni! Yritä uudelleen.';
+      }
+    }
+  </script>
+</body>
+</html>   
